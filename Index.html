@@ -127,13 +127,11 @@
     };
 
     async function inipesan() {
-      var { value: nama } = await swals.fire({
-        title: "What's your beautiful name?",
-        input: "text",
-      });
-      if (nama && nama.length < 11) {
-        window.nama = nama;
-        vketikhalo = "Happy Birthday, " + nama + "!";
+      var name = "Sangita"; // Fixed value assigned here
+
+      if (name && name.length < 11) {
+        window.name = name;
+        vketikhalo = "Happy Birthday, " + name + "!";
         mulainama();
       } else {
         await Swal.fire({
@@ -152,7 +150,7 @@
 
     async function pertanyaan() {
       var { isConfirmed: prtanya } = await swals.fire({
-        title: nama + ", " + tanya,
+        title: name + ", " + tanya,
         text: "" + opstanya,
         imageUrl: "" + fotostiker5.src,
         showCancelButton: true,
@@ -160,10 +158,10 @@
         cancelButtonText: "" + tomnegatif,
       });
       if (prtanya) {
-        pesanwhatsapp = "Yes " + nama + ", let the birthday magic begin!";
+        pesanwhatsapp = "Yes " + name + ", let the birthday magic begin!";
         menuju();
       } else {
-        pesanwhatsapp = nama + ", don't miss out on the birthday fun!";
+        pesanwhatsapp = name + ", don't miss out on the birthday fun!";
         await swalst.fire({
           title: "" + kataditolak.innerHTML,
           timer: 2000,

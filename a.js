@@ -140,10 +140,10 @@ function aktipesan2(){
   kalimat.innerHTML = "";
   new TypeIt("#kalimat", {
     strings: ["" + vketik2, "" + vketik3],
-    startDelay: 500,
-    speed: 30,
+    startDelay: 800,
+    speed: 50,
     cursor: true,
-    deleteSpeed: 30,
+    deleteSpeed: 50,
     breakLines: false,
     waitUntilVisible: true,
     lifelike: true,

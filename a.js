@@ -10,8 +10,8 @@ async function mulainama() {
   bodyblur.style = "opacity:0";
   wallpaper.style = "transform: scale(1);";
   fotostiker.style = "display:inline-flex;";
-  setTimeout(ftmuncul, 500);
-  setTimeout(kethalo, 100);
+  setTimeout(ftmuncul, 100);
+  setTimeout(kethalo, 130);
 }
 
 function ftmuncul() {

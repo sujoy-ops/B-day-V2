@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- SEO / OG -->
+  <title>Happy Birthday 🎂 — A Special Surprise</title>
+  <meta name="description" content="A special birthday surprise just for you 💖" />
+  <meta property="og:title" content="Happy Birthday — A Special Surprise" />
+  <meta property="og:description" content="A special birthday surprise just for you 💖" />
+  <meta property="og:image" content="https://iili.io/3YXll94.jpg" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <!-- Background audio -->
+  <audio src="./y2mate (mp3cut.net).mp3" id="bgAudio" class="hidden-el"></audio>
+
+  <!-- Animated background overlay -->
+  <div id="bgOverlay"></div>
+
+  <!-- Wallpaper layer -->
+  <img src="" id="bgWallpaper" alt="" />
+
+  <!-- ── Main Content ── -->
+  <div id="mainContent">
+
+    <!-- Gift button -->
+    <div id="giftWrapper">
+      <img src="./Valentine-Surprise.png" alt="Open your gift 🎁" />
+    </div>
+    <p id="giftLabel">
+      <span>Open the gift, cutie 🎀</span>
+    </p>
+
+    <!-- Sticker pool (hidden; only #activeStickerDisplay is shown) -->
+    <div class="stickerPool">
+      <img src="https://media.tenor.com/4Ijycn6xFzUAAAAj/mochi-blue-roses.gif"   id="stk0" alt="" />
+      <img src="https://feeldreams.github.io/bunga.gif"                           id="stk1" alt="" />
+      <img src="https://feeldreams.github.io/pandacoklat.gif"                     id="stk2" alt="" />
+      <img src="https://media.tenor.com/snFoLI-S9CQAAAAj/milk-and-mocha.gif"     id="stk3" alt="" />
+      <img src="https://feeldreams.github.io/emawh.gif"                           id="stk4" alt="" />
+      <!-- NOTE: stk5 (second pandacoklat) removed — was identical duplicate of stk2 -->
+    </div>
+
+    <!-- Active sticker display -->
+    <img id="activeStickerDisplay" src="" alt="" />
+
+    <!-- Greeting typed text -->
+    <p id="greetingText" class="greeting-line"></p>
+
+    <!-- Message card -->
+    <div>
+      <blockquote id="msgCard" data-text="💞">
+
+        <p id="msgIntro">Happy Birthday, gorgeous! Today is all about celebrating you.</p>
+
+        <p id="msgTap">Tap here for your birthday surprise! 🎉</p>
+
+        <div id="emojiRow">
+          <li id="emo1">🎂</li>
+          <li id="emo2">🎁</li>
+          <li id="emo3">🥳</li>
+          <li id="emo4">💖</li>
+        </div>
+
+        <p id="msgLine2" class="card-body">You shine brighter every year! ✨</p>
+        <p id="msgLine3" class="card-body">Do you know what makes today extra special?</p>
+        <p id="msgLine4" class="card-accent">It's your birthday! 🎂</p>
+        <p id="msgLine5" class="card-accent">
+          Today, I wish you a year filled with laughter, love, and unforgettable moments.
+        </p>
+        <p id="msgLine6" class="card-accent">
+          Remember, you deserve every happiness in the world. Celebrate big and enjoy every moment!
+        </p>
+
+        <p id="tapHint">Tap to continue the celebration!</p>
+      </blockquote>
+    </div>
+
+    <!-- ── NEXT BUTTON — larger & more visible ── -->
+    <div id="nextBtnWrapper">
+      <a id="nextBtn">
+        <span class="btn-icon">🎁</span>
+        <span class="btn-label">View Birthday Album</span>
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+
+    <!-- Rejected state -->
+    <div id="rejectedState">
+      <img id="rejectedSticker" src="https://feeldreams.github.io/weee.gif" alt="" />
+      <p id="rejectedMsg">Oops! You can't skip this birthday magic.</p>
+    </div>
+
+  </div><!-- /mainContent -->
+
+  <script src="app.js"></script>
+</body>
+</html>

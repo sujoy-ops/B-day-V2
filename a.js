@@ -1,4 +1,4 @@
-function initengahan(){
+function initengahan() {
   kadoIn.style = "display:none";
   ket.style = "display:none";
   Content.style = "opacity:1;margin-top:0";
@@ -15,11 +15,8 @@ async function mulainama() {
 }
 
 function ftmuncul() {
-  if (ftganti == 0) { fotostiker.src = deffotostiker; }
-  if (ftganti == 1) { fotostiker.src = fotostiker1.src; }
-  if (ftganti == 2) { fotostiker.src = fotostiker2.src; }
-  if (ftganti == 3) { fotostiker.src = fotostiker3.src; }
-  if (ftganti == 4) { fotostiker.src = fotostiker4.src; }
+  const srcs = [deffotostiker, fotostiker1.src, fotostiker2.src, fotostiker3.src, fotostiker4.src];
+  fotostiker.src = srcs[ftganti] || deffotostiker;
   fotostiker.style = "display:inline-flex;opacity:1;transform:scale(1)";
 }
 
@@ -45,7 +42,7 @@ function bqhilang() {
 
 function kethalo() {
   new TypeIt("#halo", {
-    strings: ["" + vketikhalo],
+    strings: [vketikhalo],
     startDelay: 50,
     speed: 40,
     waitUntilVisible: true,
@@ -62,21 +59,24 @@ function tombol() {
   fungsi = 1;
 }
 
-document.getElementById("By").onclick = function() {
-  if (fungsi == 1) { pertanyaan(); }
-  if (fungsi == 2) { menuju(); }
-}
+// Next button — goes DIRECTLY to hollow album, no extra dialogs
+document.getElementById("By").onclick = function () {
+  if (fungsi === 1 || fungsi === 2) {
+    window.location = "./hollow-album/index.html";
+  }
+};
 
-async function menuju(){
-  await swals.fire('Yay!', 'And here comes another birthday surprise for you!', 'success');
+// Helper kept in case referenced elsewhere, but no longer called by Next
+function menuju() {
   window.location = "./hollow-album/index.html";
 }
 
-vketik1 = kalimat.innerHTML;
+const vketik1 = kalimat.innerHTML;
 kalimat.innerHTML = "";
-function mulaiketik1(){
+
+function mulaiketik1() {
   new TypeIt("#kalimat", {
-    strings: ["" + vketik1],
+    strings: [vketik1],
     startDelay: 400,
     speed: 20,
     cursor: false,
@@ -84,27 +84,27 @@ function mulaiketik1(){
     breakLines: false,
     waitUntilVisible: true,
     lifelike: true,
-    afterComplete: function(){
+    afterComplete: function () {
       aktiopsL();
     },
   }).go();
 }
 
-opsLclick = 0;
-opsLcheck = 0;
-defopsL = opsL.innerHTML;
-document.getElementById("bq").onclick = function() {
-  if (opsLclick == 1) {
-    if (opsLcheck == 1) { setTimeout(aktipesan1, 400); }
-    if (opsLcheck == 2) { mulaiketik3(); }
-    if (opsLcheck == 3) { mulaiketik4(); }
-    if (opsLcheck == 4) { mulaiketik5(); }
-    if (opsLcheck == 5) { kethalo2(); }
+let opsLclick = 0, opsLcheck = 0;
+const defopsL = opsL.innerHTML;
+
+document.getElementById("bq").onclick = function () {
+  if (opsLclick === 1) {
+    if (opsLcheck === 1) setTimeout(aktipesan1, 400);
+    if (opsLcheck === 2) mulaiketik3();
+    if (opsLcheck === 3) mulaiketik4();
+    if (opsLcheck === 4) mulaiketik5();
+    if (opsLcheck === 5) kethalo2();
     otomatis();
     opsL.style.opacity = "0";
     opsLclick = 0;
   }
-}
+};
 
 function aktiopsL() {
   opsL.innerHTML = defopsL;
@@ -132,14 +132,15 @@ function aktipesan1() {
   kolombaru.style = "position:relative;opacity:1;transform:scale(1);";
 }
 
-vketik2 = pesan2.innerHTML;
-vketik3 = pesan3.innerHTML;
-function aktipesan2(){
+const vketik2 = pesan2.innerHTML;
+const vketik3 = pesan3.innerHTML;
+
+function aktipesan2() {
   wallpaper.style = "transform: scale(1.5);";
   kolombaru.style = "";
   kalimat.innerHTML = "";
   new TypeIt("#kalimat", {
-    strings: ["" + vketik2, "" + vketik3],
+    strings: [vketik2, vketik3],
     startDelay: 800,
     speed: 50,
     cursor: true,
@@ -147,84 +148,91 @@ function aktipesan2(){
     breakLines: false,
     waitUntilVisible: true,
     lifelike: true,
-    afterComplete: function(){
+    afterComplete: function () {
       kalimat.innerHTML = vketik3;
       setTimeout(aktipesan4, 700);
     },
   }).go();
 }
 
-vketik4 = pesan4.innerHTML;
+const vketik4 = pesan4.innerHTML;
 pesan4.innerHTML = "";
-function aktipesan4(){
+
+function aktipesan4() {
   wallpaper.style = "transform: scale(1);";
   fthilang();
   ftganti = 2;
   setTimeout(ftmuncul, 300);
   new TypeIt("#pesan4", {
-    strings: ["" + vketik4],
+    strings: [vketik4],
     startDelay: 1,
     speed: 52,
     cursor: true,
     waitUntilVisible: true,
     lifelike: true,
-    afterComplete: function(){
+    afterComplete: function () {
       pesan4.innerHTML = vketik4;
       setTimeout(aktipesan5, 700);
     },
   }).go();
 }
 
-vketik5 = pesan5.innerHTML;
+const vketik5 = pesan5.innerHTML;
 pesan5.innerHTML = "";
-function aktipesan5(){
+
+function aktipesan5() {
   wallpaper.style = "transform: scale(1.5);";
   fthilang();
   ftganti = 3;
   setTimeout(ftmuncul, 300);
   new TypeIt("#pesan5", {
-    strings: ["" + vketik5],
+    strings: [vketik5],
     startDelay: 1,
     speed: 52,
     cursor: true,
     waitUntilVisible: true,
     lifelike: true,
-    afterComplete: function(){
+    afterComplete: function () {
       pesan5.innerHTML = vketik5 + " 😊";
       setTimeout(aktipesan6, 700);
     },
   }).go();
 }
 
-vketik6 = pesan6.innerHTML;
+const vketik6 = pesan6.innerHTML;
 pesan6.innerHTML = "";
-function aktipesan6(){
+
+function aktipesan6() {
   wallpaper.style = "transform: scale(1);";
   fthilang();
   ftganti = 4;
   setTimeout(ftmuncul, 300);
   new TypeIt("#pesan6", {
-    strings: ["" + vketik6],
+    strings: [vketik6],
     startDelay: 1,
     speed: 52,
     cursor: true,
     waitUntilVisible: true,
     lifelike: true,
-    afterComplete: function(){
+    afterComplete: function () {
       pesan6.innerHTML = vketik6;
       setTimeout(tombol, 400);
     },
   }).go();
 }
 
-var slov = 0;
-document.getElementById("lv1").onclick = function() { lv1.style = "opacity:0"; slov += 1; this.onclick = null; checkslov(); }
-document.getElementById("lv2").onclick = function() { lv2.style = "opacity:0"; slov += 1; this.onclick = null; checkslov(); }
-document.getElementById("lv3").onclick = function() { lv3.style = "opacity:0"; slov += 1; this.onclick = null; checkslov(); }
-document.getElementById("lv4").onclick = function() { lv4.style = "opacity:0"; slov += 1; this.onclick = null; checkslov(); }
+let slov = 0;
+["lv1","lv2","lv3","lv4"].forEach(id => {
+  document.getElementById(id).onclick = function () {
+    this.style = "opacity:0";
+    slov += 1;
+    this.onclick = null;
+    checkslov();
+  };
+});
 
 function checkslov() {
-  if (slov == 4) {
+  if (slov === 4) {
     kolombaru.style = "position:relative;transform:scale(1)";
     fthilang();
     ftganti = 1;

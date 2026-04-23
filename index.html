@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5" name="viewport" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&family=Dancing+Script&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <title>HAPPY BIRTHDAY TO YOU BY SUJOY</title>
+  <meta name="description" content="A special Surprise gift">
+  <meta property="og:title" content="HAPPY BIRTHDAY TO YOU BY SUJOY" />
+  <meta property="og:description" content="A special Surprise gift" />
+  <meta property="og:image" content="https://iili.io/3YXll94.jpg" />
+  <meta property="og:url" content="https://og-bday.netlify.app/" />
+  <meta property="og:type" content="website" />
+</head>
+<body style="background: linear-gradient(to bottom, #ffe1e1, #ff217de0), url(./r.jpg); height: 100vh;">
+  <audio src="./y2mate (mp3cut.net).mp3" id="linkmp3" class="sembunyi"></audio>
+  <div id="bodyblur">
+    <img src="" id="wallpaper" />
+  </div>
+  <div id="Content">
+    <div id="kadoIn">
+      <img src="./Valentine-Surprise.png" alt="Open Gift Button" />
+    </div>
+    <p id="ket">
+      <span style="font-style: italic; color: rgb(0,0,0); margin-top: 3px !important;">Open the gift, cutie:3</span>
+    </p>
+    <div class="kumpulanstiker" style="margin-top: 95px;">
+      <img src="https://media.tenor.com/4Ijycn6xFzUAAAAj/mochi-blue-roses.gif" id="fotostiker" />
+      <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker1" />
+      <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker2" />
+      <img src="https://media.tenor.com/snFoLI-S9CQAAAAj/milk-and-mocha.gif" id="fotostiker3" />
+      <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker4" />
+      <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker5" />
+    </div>
+    <p id="halo" class="halo"></p>
+    <div>
+      <blockquote id="bq" data-text="💞">
+        <p id="kalimat">Happy Birthday, gorgeous! Today is all about celebrating you.</p>
+        <p id="pesan1">Tap here for your birthday surprise! 🎉</p>
+        <div id="kolombaru">
+          <li id="lv1">🎂</li>
+          <li id="lv2">🎁</li>
+          <li id="lv3">🥳</li>
+          <li id="lv4">💖</li>
+        </div>
+        <p id="pesan2">You shine brighter every year! ✨</p>
+        <p id="pesan3">Do you know what makes today extra special?</p>
+        <p id="pesan4" class="sty2">It's your birthday!</p>
+        <p id="pesan5" class="sty2">Today, I wish you a year filled with laughter, love, and unforgettable moments.</p>
+        <p id="pesan6" class="sty2">Remember, you deserve every happiness in the world. Celebrate big and enjoy every moment!</p>
+        <p id="opsL">Tap to continue the celebration!</p>
+      </blockquote>
+    </div>
+    <!-- Next Button — 200% larger via inline style override -->
+    <div id="Tombol"><a id="By" style="font-size:24px;padding:20px 36px;border-radius:28px;">&#128140; Next</a></div>
+    <div id="pesanditolak">
+      <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif" />
+      <p id="kataditolak">Oops! You can't skip this birthday magic.</p>
+    </div>
+  </div>
+  <script>
+    const body = document.querySelector("body");
+    const audio = new Audio("" + linkmp3.src);
+    let ftganti = 0, fungsi = 0, fungsiAwal = 0;
+    const deffotostiker = fotostiker.src;
+
+    Content.style = "opacity:1;margin-top:16vh";
+
+    document.getElementById("kadoIn").onclick = function () {
+      if (fungsiAwal === 0) {
+        audio.play();
+        fungsiAwal = 1;
+        kadoIn.style = "transition:all .8s ease;transform:scale(10);opacity:0";
+        wallpaper.style = "transform: scale(1.5);";
+        ket.style = "display:none";
+        setTimeout(initengahan, 300);
+        setTimeout(inipesan, 500);
+      }
+    };
+
+    async function inipesan() {
+      const name = "¿Name?";
+      if (name && name.length < 11) {
+        window.name = name;
+        vketikhalo = "Happy Birthday, " + name + "!";
+        mulainama();
+      } else {
+        await Swal.fire({
+          title: "Your name is lovely, but it seems a bit long.",
+          text: "Please enter a shorter name.",
+          icon: "warning",
+        });
+        inipesan();
+      }
+    }
+  </script>
+  <script src="a.js"></script>
+</body>
+</html>
